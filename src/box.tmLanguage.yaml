@@ -5,6 +5,7 @@ scopeName: source.box
 patterns: 
   - include: '#blocks'
   - include: '#taggedBlocks'
+  - include: '#comments'
   - include: '#field' #@todo: need to limit this to the right places 
 
 repository:
@@ -37,6 +38,15 @@ repository:
     patterns:
       - { include: '#field' }
       # - { include: '#strings' }
+
+  comments:
+    name: comment.line.box
+    begin: (\[\!)
+    end: (\])
+    beginCaptures:
+      1: { name: comment.line.box }
+    endCaptures:
+      1: { name: comment.line.box }
 
   field:
     name: meta.record.field.box

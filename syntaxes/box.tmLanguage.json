@@ -12,6 +12,9 @@
       "include": "#taggedBlocks"
     },
     {
+      "include": "#comments"
+    },
+    {
       "include": "#field"
     }
   ],
@@ -73,6 +76,21 @@
           "include": "#field"
         }
       ]
+    },
+    "comments": {
+      "name": "comment.line.box",
+      "begin": "(\\[\\!)",
+      "end": "(\\])",
+      "beginCaptures": {
+        "1": {
+          "name": "comment.line.box"
+        }
+      },
+      "endCaptures": {
+        "1": {
+          "name": "comment.line.box"
+        }
+      }
     },
     "field": {
       "name": "meta.record.field.box",
