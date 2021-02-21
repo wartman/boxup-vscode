@@ -79,7 +79,7 @@
     },
     "comments": {
       "name": "comment.line.box",
-      "begin": "(\\[\\!)",
+      "begin": "(\\[\\/)",
       "end": "(\\])",
       "beginCaptures": {
         "1": {
