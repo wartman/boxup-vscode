@@ -4,6 +4,7 @@ fileTypes:
 scopeName: source.box
 patterns: 
   - include: '#blocks'
+  - include: '#arrowBlocks'
   - include: '#taggedBlocks'
   - include: '#comments'
   - include: '#field' #@todo: need to limit this to the right places 
@@ -22,6 +23,12 @@ repository:
     patterns:
       - { include: '#field' }
       - { include: '#strings' }
+
+  arrowBlocks:
+    name: meta.block.box
+    match: (\-\>)
+    captures:
+      1: { name: punctuation.definition.list.begin.box }
 
   taggedBlocks:
     name: meta.block.tagged.box
