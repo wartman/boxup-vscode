@@ -24,7 +24,7 @@
   "repository": {
     "blocks": {
       "name": "meta.block.box",
-      "begin": "(\\[)\\s*([a-zA-Z0-9_]+)",
+      "begin": "(\\[)\\s*([a-zA-Z0-9_\\!\\@\\#\\$\\%\\^\\&]+)",
       "end": "(\\])",
       "beginCaptures": {
         "1": {
@@ -92,7 +92,7 @@
     "comments": {
       "name": "comment.line.box",
       "begin": "(\\[\\/)",
-      "end": "(\\])",
+      "end": "(\\/\\])",
       "beginCaptures": {
         "1": {
           "name": "comment.line.box"
