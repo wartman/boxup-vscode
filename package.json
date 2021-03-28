@@ -21,7 +21,8 @@
                     "box"
                 ],
                 "extensions": [
-                    "box"
+                    "box",
+                    "boxconfig"
                 ],
                 "configuration": "./language-configuration.json"
             }

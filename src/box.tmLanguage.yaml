@@ -4,7 +4,6 @@ fileTypes:
 scopeName: source.box
 patterns: 
   - include: '#blocks'
-  - include: '#arrowBlocks'
   - include: '#taggedBlocks'
   - include: '#comments'
   - include: '#field' #@todo: need to limit this to the right places 
@@ -13,27 +12,22 @@ repository:
   
   blocks:
     name: meta.block.box
-    begin: (\[)\s*([a-zA-Z0-9_\!\@\#\$\%\^\&]+)
-    end: (\])
+    begin: (\[)([a-zA-Z0-9_\!\@\#\$\%\^\&\*]+)(\/[a-zA-Z0-9_]*)?
+    end: \s*(\])
     beginCaptures:
       1: { name: punctuation.definition.block.box }
       2: { name: entity.other.attribute-name.block.box }
+      3: { name: entity.name.other.box }
     endCaptures:
       1: { name: punctuation.definition.block.box }
     patterns:
       - { include: '#field' }
       - { include: '#strings' }
 
-  arrowBlocks:
-    name: meta.block.box
-    match: (\-\>)
-    captures:
-      1: { name: punctuation.definition.list.begin.box }
-
   taggedBlocks:
     name: meta.block.tagged.box
-    begin: (\<)(.*)(\>)(\[)\s*([a-zA-Z0-9_]+)
-    end: (\])
+    begin: (\<)(.*)(\>)(\[)\s*([a-zA-Z0-9_\!\@\#\$\%\^\&\*]+)
+    end: \s*(\])
     beginCaptures:
       1: { name: punctuation.definition.tag.box }
       2: { name: string.other.tagged.box }
@@ -44,7 +38,7 @@ repository:
       1: { name: punctuation.definition.block.box }
     patterns:
       - { include: '#field' }
-      # - { include: '#strings' }
+      - { include: '#strings' }
 
   comments:
     name: comment.line.box
