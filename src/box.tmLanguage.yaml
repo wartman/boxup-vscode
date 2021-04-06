@@ -77,4 +77,11 @@ repository:
         patterns: 
           - name: constant.character.escape.box
             match: \\.
+      - name: string.quoted.pipe.box
+        begin: \|
+        end: \|
+        patterns: 
+          - name: constant.character.escape.box
+            match: \\.
+  
   

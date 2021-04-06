@@ -31,7 +31,7 @@
           "name": "entity.other.attribute-name.block.box"
         },
         "3": {
-          "name": "entity.name.type.box"
+          "name": "entity.name.other.box"
         }
       },
       "endCaptures": {
@@ -137,6 +137,17 @@
           "name": "string.quoted.single.box",
           "begin": "\\'",
           "end": "\\'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.box",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.pipe.box",
+          "begin": "\\|",
+          "end": "\\|",
           "patterns": [
             {
               "name": "constant.character.escape.box",
